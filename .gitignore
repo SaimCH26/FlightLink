@@ -1,0 +1,21 @@
+# Virtual environment
+venv/
+.venv/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Database (contains user accounts)
+*.db
+*.sqlite3
+instance/
+
+# Secrets
+.env
+
+# Editor and OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
