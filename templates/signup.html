@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block title %}{{ role_label }} sign up · SkyRoute{% endblock %}
+{% block topright %}<a href="{{ url_for('home') }}">← Roles</a>{% endblock %}
+{% block hint %}Create a {{ role_label|lower }} account{% endblock %}
+
+{% block content %}
+<section class="panel">
+  <p class="eyebrow">{{ role_label }}</p>
+  <h1>Create your <em>account</em></h1>
+  <p class="sub">
+    {% if role == 'authority' %}
+      You need the access code issued to your airport administration.
+    {% else %}
+      Takes a few seconds. Your password is stored hashed.
+    {% endif %}
+  </p>
+
+  {% include "_flash.html" %}
+
+  <form method="post" novalidate>
+    <label>Full name
+      <input type="text" name="name" value="{{ form.get('name', '') }}" autocomplete="name" required autofocus>
+    </label>
+    <label>Email
+      <input type="email" name="email" value="{{ form.get('email', '') }}" autocomplete="email" required>
+    </label>
+
+    {% if role == 'authority' %}
+    <div class="row">
+      <label>Airport code
+        <input type="text" name="airport_code" value="{{ form.get('airport_code', '') }}" maxlength="3" placeholder="LHE" required>
+      </label>
+      <label>Access code
+        <input type="password" name="access_code" autocomplete="off" required>
+      </label>
+    </div>
+    {% endif %}
+
+    <div class="row">
+      <label>Password
+        <input type="password" name="password" autocomplete="new-password" required>
+      </label>
+      <label>Confirm
+        <input type="password" name="confirm" autocomplete="new-password" required>
+      </label>
+    </div>
+    <button type="submit">Create account <span>→</span></button>
+  </form>
+
+  <p class="alt">Already registered? Signin is added in a later step.</p>
+</section>
+{% endblock %}

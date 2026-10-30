@@ -3,14 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{% block title %}Flight Link{% endblock %}</title>
+  <title>{% block title %}FlightLink{% endblock %}</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600;700&family=Mrs+Saint+Delafield&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-
   <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
+
+  <canvas id="scene"></canvas>
+  <div class="spotlight"></div>
+  <div class="vignette"></div>
+  <div class="grain"></div>
 
   <header class="topbar">
     <span class="tag">Graph-based flight route planner</span>
@@ -27,5 +31,6 @@
     <span class="corner">v0.1 · DSA Project</span>
   </footer>
 
+  <script src="{{ url_for('static', filename='js/scene.js') }}"></script>
 </body>
 </html>

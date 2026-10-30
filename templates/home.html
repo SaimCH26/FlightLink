@@ -1,10 +1,29 @@
 {% extends "base.html" %}
 
-{% block title %}Home · FlightLink{% endblock %}
+{% block title %}Choose your role · SkyRoute{% endblock %}
+{% block hint %}Select how you will use the route network{% endblock %}
 
 {% block content %}
-<section class="panel">
-  <h1>Welcome <em>aboard</em></h1>
-  <p class="sub">Layout works. Role selection comes next.</p>
+<section class="panel wide">
+  <h1>Choose your <em>role</em></h1>
+  <p class="sub">Select how you want to use SkyRoute.</p>
+
+  {% include "_flash.html" %}
+
+  <div class="roles">
+    <a class="role-card" href="{{ url_for('signup', role='passenger') }}">
+      <span class="role-tag">01 · Passenger</span>
+      <h2>Passenger</h2>
+      <p>Search airports, find the shortest and cheapest routes, and compare connections.</p>
+      <span class="arrow">→</span>
+    </a>
+
+    <a class="role-card" href="{{ url_for('signup', role='authority') }}">
+      <span class="role-tag">02 · Authority</span>
+      <h2>Airport Authority</h2>
+      <p>Manage airports and routes in the network. Requires an access code.</p>
+      <span class="arrow">→</span>
+    </a>
+  </div>
 </section>
 {% endblock %}
