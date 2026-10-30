@@ -275,3 +275,18 @@ button:hover span { transform: translateX(5px); }
 @media (max-width: 720px) {
   .roles, .row { grid-template-columns: 1fr; }
 }
+
+/* ---------- Links inside text, dashboards, errors ---------- */
+.alt a { color: var(--fg); border-bottom: 1px solid var(--line); transition: border-color 0.25s; }
+.alt a:hover { border-color: var(--fg); }
+
+.meta { display: grid; gap: 14px; margin-top: 28px; }
+.meta div {
+  display: flex; justify-content: space-between;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--line);
+  font-size: 13px; letter-spacing: 0.08em;
+}
+.meta dt { color: var(--dim); text-transform: uppercase; letter-spacing: 0.2em; font-size: 10.5px; align-self: center; }
+
+h1.big { font-size: 88px; line-height: 1; letter-spacing: -0.03em; margin-bottom: 14px; }

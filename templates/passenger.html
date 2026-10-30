@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}Passenger · SkyRoute{% endblock %}
+{% block topright %}<a href="{{ url_for('signout') }}">Sign out</a>{% endblock %}
+{% block hint %}Signed in as passenger{% endblock %}
+
+{% block content %}
+<section class="panel wide">
+  <p class="eyebrow">Passenger</p>
+  <h1>Hello, <em>{{ session['name'] }}</em></h1>
+  <p class="sub">Route search arrives in a later step.</p>
+
+  <dl class="meta">
+    <div><dt>Role</dt><dd>Passenger</dd></div>
+  </dl>
+</section>
+{% endblock %}

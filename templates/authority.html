@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}Authority · SkyRoute{% endblock %}
+{% block topright %}<a href="{{ url_for('signout') }}">Sign out</a>{% endblock %}
+{% block hint %}Signed in as airport authority{% endblock %}
+
+{% block content %}
+<section class="panel wide">
+  <p class="eyebrow">Airport Authority</p>
+  <h1>Hello, <em>{{ session['name'] }}</em></h1>
+  <p class="sub">Airport and route management arrives in a later step.</p>
+
+  <dl class="meta">
+    <div><dt>Role</dt><dd>Airport Authority</dd></div>
+    <div><dt>Airport</dt><dd>{{ session['airport'] }}</dd></div>
+  </dl>
+</section>
+{% endblock %}

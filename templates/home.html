@@ -2,6 +2,7 @@
 
 {% block title %}Choose your role · SkyRoute{% endblock %}
 {% block hint %}Select how you will use the route network{% endblock %}
+{% block topright %}<a href="{{ url_for('signin') }}">Sign in</a>{% endblock %}
 
 {% block content %}
 <section class="panel wide">
@@ -25,5 +26,6 @@
       <span class="arrow">→</span>
     </a>
   </div>
+    <p class="alt">Already have an account? <a href="{{ url_for('signin') }}">Sign in</a></p>
 </section>
 {% endblock %}

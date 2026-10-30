@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block title %}{{ code }} · SkyRoute{% endblock %}
+{% block topright %}<a href="{{ url_for('home') }}">Home</a>{% endblock %}
+{% block hint %}Error {{ code }}{% endblock %}
+
+{% block content %}
+<section class="panel">
+  <p class="eyebrow">Error</p>
+  <h1 class="big">{{ code }}</h1>
+  <p class="sub">{{ message }}</p>
+  <p class="alt"><a href="{{ url_for('home') }}">Back to start</a></p>
+</section>
+{% endblock %}

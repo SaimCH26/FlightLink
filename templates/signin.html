@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}Sign in · SkyRoute{% endblock %}
+{% block topright %}<a href="{{ url_for('home') }}">Sign up</a>{% endblock %}
+{% block hint %}Sign in to access the route network{% endblock %}
+
+{% block content %}
+<section class="panel">
+  <p class="eyebrow">Account access</p>
+  <h1>Welcome <em>back</em></h1>
+  <p class="sub">Passengers and airport authorities sign in here.</p>
+
+  {% include "_flash.html" %}
+
+  <form method="post" novalidate>
+    <label>Email
+      <input type="email" name="email" value="{{ form.get('email', '') }}" autocomplete="email" required autofocus>
+    </label>
+    <label>Password
+      <input type="password" name="password" autocomplete="current-password" required>
+    </label>
+    <button type="submit">Sign in <span>→</span></button>
+  </form>
+
+  <p class="alt">No account? <a href="{{ url_for('home') }}">Create one</a></p>
+</section>
+{% endblock %}
